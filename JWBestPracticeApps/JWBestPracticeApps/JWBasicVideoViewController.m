@@ -35,6 +35,15 @@
     config.autostart = YES;
     config.repeat = YES;
     
+    // Ad Config
+    JWAdConfig *adConfig = [JWAdConfig new];
+    adConfig.adClient = googIMA;
+    config.adConfig = adConfig;
+    config.adSchedule = @[ [JWAdBreak adBreakWithTag:@"http://playertest.longtailvideo.com/adtags/preroll_newer.xml" offset:@"pre"] ];
+    
+    // Hide Controll Does Not work when preroll ads exist.
+    config.controls = NO;
+    
     self.player = [[JWPlayerController alloc]initWithConfig:config];
     self.player.forceLandscapeOnFullScreen = YES;
     self.player.forceFullScreenOnLandscape = YES;

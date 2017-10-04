@@ -6,6 +6,7 @@
 target 'JWBestPracticeApps' do
 
 pod 'JWPlayer-SDK', '~> 2.0'
+pod 'GoogleAds-IMA-iOS-SDK', '=3.3.1'
 
 end
 

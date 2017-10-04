@@ -35,6 +35,14 @@
     config.autostart = YES;
     config.repeat = YES;
     
+    // Caption Config
+    config.tracks = @[[JWTrack trackWithFile:@"http://office.zensis.com/dennis/viutv/testsub.srt" label:@"Eng" isDefault:YES]];
+    JWCaptionStyling* captionStyling = [JWCaptionStyling new];
+    captionStyling.windowColor = [UIColor clearColor];  // !!! Has no effect on JWPlayer-SDK 2.7.9
+    captionStyling.font = [UIFont systemFontOfSize:17];
+    captionStyling.edgeStyle = raised;
+    config.captionStyling = captionStyling;
+    
     self.player = [[JWPlayerController alloc]initWithConfig:config];
     self.player.forceLandscapeOnFullScreen = YES;
     self.player.forceFullScreenOnLandscape = YES;
